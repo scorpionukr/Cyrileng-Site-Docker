@@ -7,7 +7,7 @@ services:
     ports:
       - 8081:80
     environment:
-      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_HOST: cyrileng-db0
       WORDPRESS_DB_USER: blog
       WORDPRESS_DB_PASSWORD: qwerty-01
       WORDPRESS_DB_NAME: blog
