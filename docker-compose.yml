@@ -14,6 +14,8 @@ services:
       WORDPRESS_TABLE_PREFIX: wp_
     volumes:
       - ./wp-data:/var/www/html/wp-content
+    networks:
+      - cyrileng-net
 
   cyrileng-db0:
     image: mysql:8.0
@@ -26,6 +28,8 @@ services:
       MYSQL_RANDOM_ROOT_PASSWORD: '1'
     volumes:
       - ./mysql-data:/var/lib/mysql
+    networks:
+      - cyrileng-net
 
 networks:
   cyrileng-net:
