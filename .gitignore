@@ -1,0 +1,5 @@
+mysql-data/*
+!mysql-data/.gitkeep
+wp-data/themes/twenty*
+wp-data/fonts/
+wp-data/uploads/

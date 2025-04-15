@@ -1,0 +1,36 @@
+services:
+
+  cyrileng-site0:
+    image: wordpress
+    container_name: cyrileng-site0
+    restart: always
+    ports:
+      - 8081:80
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: blog
+      WORDPRESS_DB_PASSWORD: qwerty-01
+      WORDPRESS_DB_NAME: blog
+      WORDPRESS_TABLE_PREFIX: wp_
+    volumes:
+      - ./wp-data:/var/www/html/wp-content
+
+  cyrileng-db0:
+    image: mysql:8.0
+    container_name: cyrileng-db0
+    restart: always
+    environment:
+      MYSQL_DATABASE: blog
+      MYSQL_USER: blog
+      MYSQL_PASSWORD: qwerty-01
+      MYSQL_RANDOM_ROOT_PASSWORD: '1'
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+
+networks:
+  cyrileng-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: "192.168.20.0/24"
+          gateway: "192.168.20.1"
