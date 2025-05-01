@@ -12,8 +12,6 @@ services:
       WORDPRESS_DB_PASSWORD: qwerty-01
       WORDPRESS_DB_NAME: blog
       WORDPRESS_TABLE_PREFIX: wp_
-      WORDPRESS_CONFIG_EXTRA: |
-        $_SERVER['HTTPS'] = 'on';
     volumes:
       - ./wp-data:/var/www/html/wp-content
     networks:
